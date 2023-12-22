@@ -29,3 +29,5 @@ pub fn main() {
 
 That's pretty much it, but documentation can be found at
 <https://hexdocs.pm/envoy>.
+
+(OK I lied, it has one dep. The standard library so we can use `Dict` for `all`).
