@@ -6,7 +6,7 @@ pub fn main() {
   // All
   let all = envoy.all()
   let assert Ok(_) = dict.get(all, "LANG")
-  let assert Error(_) = dict.get(all, "UAGE")
+  let assert Error(Nil) = dict.get(all, "UAGE")
 
   // Get, set
   let assert Error(_) = envoy.get("UAGE")
@@ -17,9 +17,9 @@ pub fn main() {
 
   // Unset
   envoy.unset("UAGE")
-  let assert Error(_) = envoy.get("UAGE")
+  let assert Error(Nil) = envoy.get("UAGE")
   let all = envoy.all()
-  let assert Error(_) = dict.get(all, "UAGE")
+  let assert Error(Nil) = dict.get(all, "UAGE")
 
   // Unicode
   envoy.set("WIBBLE", "🦄")

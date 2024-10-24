@@ -11,7 +11,7 @@ export function get(key) {
   }
 
   if (value === undefined) {
-    return new GError("Key not found");
+    return new GError(undefined);
   } else {
     return new Ok(value);
   }
