@@ -1,5 +1,5 @@
-import { Ok, Error as GError } from "./gleam.mjs";
-import Dict from "../gleam_stdlib/dict.mjs";
+import { Result$Ok, Result$Error } from "./gleam.mjs";
+import { new$ as newDict, insert } from "../gleam_stdlib/gleam/dict.mjs";
 
 export function get(key) {
   let value;
@@ -11,9 +11,9 @@ export function get(key) {
   }
 
   if (value === undefined) {
-    return new GError(undefined);
+    return Result$Error(undefined);
   } else {
-    return new Ok(value);
+    return Result$Ok(value);
   }
 }
 
@@ -34,11 +34,20 @@ export function unset(key) {
 }
 
 export function all() {
+  let environmentVariables = {};
+
   if (globalThis.Deno) {
-    return Dict.fromObject(Deno.env.toObject());
+    environmentVariables = Deno.env.toObject();
   } else if (globalThis.process) {
-    return Dict.fromObject(process.env);
-  } else {
-    return new Dict();
+    environmentVariables = process.env;
   }
+
+  let result = newDict();
+  for (let key in environmentVariables) {
+    if (Object.hasOwn(environmentVariables, key)) {
+      result = insert(result, key, environmentVariables[key]);
+    }
+  }
+
+  return result;
 }
