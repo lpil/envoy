@@ -1,5 +1,6 @@
 name = "envoy"
 version = "1.0.2"
+gleam = ">= 1.13.0"
 description = "A zero dependency cross platform Gleam package for reading environment variables"
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "lpil", repo = "envoy" }
