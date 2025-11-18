@@ -1,5 +1,5 @@
 name = "envoy"
-version = "1.0.2"
+version = "1.1.0"
 gleam = ">= 1.13.0"
 description = "A zero dependency cross platform Gleam package for reading environment variables"
 licences = ["Apache-2.0"]
