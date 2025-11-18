@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0 - 2025-11-18
+
+- Updated for Gleam v1.13.0.
+
 ## v1.0.2 - 2024-09-24
 
 - Fixed a bug on JavaScript the wrong error value would be returned.
