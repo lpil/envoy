@@ -5,11 +5,11 @@ description = "A zero dependency cross platform Gleam package for reading enviro
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "lpil", repo = "envoy" }
 links = [
-  { title = "Website", href = "https://gleam.run" },
-  { title = "Sponsor", href = "https://github.com/sponsors/lpil" },
+    { title = "Website", href = "https://gleam.run" },
+    { title = "Sponsor", href = "https://github.com/sponsors/lpil" },
 ]
 
 [dependencies]
-gleam_stdlib = "~> 0.34"
+gleam_stdlib = ">= 0.34.0 and < 2.0.0"
 
 [dev-dependencies]
