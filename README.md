@@ -6,7 +6,7 @@ A zero dependency cross platform Gleam package for reading environment variables
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/envoy/)
 
 ```sh
-gleam add envoy
+gleam add envoy@1
 ```
 
 ```gleam
